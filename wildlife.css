@@ -1,0 +1,272 @@
+
+html{
+    --bg:#011918;
+    --light-bg:#e5e5e5;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+html{
+    overflow-x: hidden;
+}
+body{
+    color: white;
+    background-color: var(--bg);
+    overflow-x: hidden;
+}
+.loader{
+    position: fixed;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--bg);
+    transition: opacity 250ms;
+    z-index: 5;
+
+}
+body .highlight p{
+color:black;
+}
+body .btn{
+    background: #fff;
+    color: black;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+body p, body .btn,body .copyright{
+    font-family: "Oswald", sans-serif;
+}
+body h2{
+    font-family: "Poppins", sans-serif;
+    font-size:28px;
+    margin: 30px 0 20px 0;
+}
+body p:first-child{
+    margin: 30px 0;
+}
+.copyright{
+    text-align: center;
+}
+.menu-container{
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--bg);
+    z-index: 5;
+    position: fixed;
+    right: 0;
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    font-size: 18px;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: -webkit-transform 300ms ease-in-out;
+    transition: -webkit-transform 300ms ease-in-out;
+    transition: transform 300ms ease-in-out;
+    transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+}
+.menu-container ul{
+    list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 30px;
+  width: 100%;
+}
+.menu-container ul li{
+    display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 3.5rem;
+}
+.menu-container ul li:hover{
+    -webkit-filter: brightness(80%);
+          filter: brightness(80%);
+}
+.menu-container.show {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+.menu-overlay{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 4;
+    opacity: 0;
+    -webkit-transition: opacity 300ms;
+    transition: opacity 300ms;
+}
+  
+.hero{
+    background: url("https://vikram-hegde.github.io/resources/images/elephant.jpg") no-repeat center center/cover;
+    height:100vh;
+    width: 100%;
+}
+.hero header{
+    display: flex;
+    justify-content: space-between;
+    padding:30px;
+}
+.hero header .menu{
+    fill: white;
+    height: 35px;
+    width: 35px;
+}
+.hero .heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+}
+.hero .heading .btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 250px;
+    height: 45px;
+    font-weight: bold;
+    padding: 0 20px;
+}
+.hero .heading .btn:active{
+    transform: scale(0.96);
+}
+.hero .scroll-down{
+    width:20px;
+    height: 30px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    border: 1px solid white;
+    left: calc(50vw - 10px);
+    position: absolute;
+    bottom: 15px;
+}
+.hero .scroll-down .scroll-circle{
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+    background-color: white;
+    animation: move .8s linear infinite;
+}
+@keyframes move{
+    from{
+    transform: translateY(0);
+}
+to{
+    transform: translateY(250%);
+}
+}
+.wildlife-info{
+    padding: 0 30px 30px 30px;
+}
+.wildlife-info p{
+    margin-top: 10px;
+    line-height: 1.6;
+}
+.highlight{
+    background-color: var(--light-bg);
+    font-weight: bold;
+    padding: 20px;
+    margin: 30px 0;
+    text-align: center;
+    position: relative;
+}
+.highlight::before{
+    top: 0;
+    width: 30px;
+    height: 5px;
+    content: '';
+    display: block;
+    background-color: var(--bg);
+    position: absolute;
+    left: calc(50% - 15px);
+}
+.species .tiger{
+    width: 100vw;
+    margin: 0 calc(-50vw + 50%);
+}
+.slideshow{
+    margin: 0 calc(-50vw + 50%);
+    position: relative;
+}
+.slideshow .slides{
+    display: flex;
+    transition: transform 300ms ease-in-out, -webkit- transform 300ms ease-in-out;
+}
+.slideshow .slides img{
+    width: 100%;
+    position: relative;
+    height: 250px;
+    object-fit: cover;
+}
+.slideshow .slides p{
+    background-color: var(--light-bg);
+    color:black;
+    margin-top: -5px;
+    padding: 20px;
+}
+.slideshow .slides .overlay{
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(180 deg, rgba(0, 0, 0, 0.1 ) rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9));
+}
+.slideshow .slide{
+    width: 100vw;
+    flex: 0 0 100vw;
+    opacity: 0;
+    transform: scale(0.8);
+    transition:opacity 300ms, transform 300ms ease-in-out;
+}
+.slideshow .slides .active {
+    opacity: 1;
+    transform: scale(1);
+}
+.slideshow .guide-circles{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 230px;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+.slideshow .guide-circles .circle{
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: background-color 300ms;
+    margin:  0 5px;
+}
+.slideshow .guide-circles .circle .active{
+    background-color: white;
+}
+.work h2{
+    margin-left: 30px;
+}
+.loader svg{
+    fill: white;
+}
+footer{
+    border: 1px solid white;
+    text-align: center;
+    padding: 20px;
+    margin: 30px 0;
+}
+footer img{
+    margin-bottom: 10px;
+}
